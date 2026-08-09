@@ -1,0 +1,34 @@
+header {
+	position: sticky;
+	top: 0;
+	z-index: 1200;
+	display: flex;
+	width: 100%;
+	justify-content: center;
+	align-items: center;
+	background-color: var(--color-superficie);
+	padding: var(--espacio-sm);
+	color: var(--color-texto);
+	border-bottom: 2px solid var(--color-borde);
+}
+
+header button {
+	background: transparent;
+	padding: var(--espacio-sm);
+	border: none;
+	border-radius: var(--radio-md);
+}
+
+header .titulo {
+	display: flex;
+	align-items: center;
+	gap: 10px;
+	color: var(--color-texto);
+}
+
+.titulo-icono {
+	height: 32px;
+	width: 32px;
+	flex-shrink: 0;
+	color: currentColor;
+}

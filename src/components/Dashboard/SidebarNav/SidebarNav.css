@@ -1,0 +1,35 @@
+.sidebarNav {
+	display: flex;
+	flex-direction: column;
+	gap: 5px;
+	text-align: center;
+	font-weight: 500;
+}
+
+.sidebarNav .categorias {
+	gap: 5px;
+	display: flex;
+	padding-bottom: var(--espacio-sm);
+	overflow: scroll;
+}
+
+.categorias button {
+	border: 2px solid var(--color-borde);
+	border-radius: var(--radio-md);
+	padding: var(--espacio-sm);
+	background-color: var(--color-superficie);
+	color: var(--color-texto);
+	width: 100%;
+	cursor: pointer;
+	transition: var(--transition);
+}
+
+.categorias button:hover {
+	background-color: var(--color-primario-oscuro);
+	color: hsl(0, 0%, 100%);
+}
+
+.categorias .selected {
+	background-color: var(--color-primario);
+	color: hsl(0, 0%, 100%);
+}

@@ -1,0 +1,3 @@
+.app {
+	padding-bottom: calc(var(--altura-bottom-nav) + var(--espacio-lg));
+}

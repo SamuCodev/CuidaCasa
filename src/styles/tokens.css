@@ -1,0 +1,40 @@
+/* src/styles/tokens.css */
+:root {
+	/* Colores */
+	--color-primario: hsl(193, 54%, 23%);
+	--color-primario-oscuro: hsl(194, 56%, 16%);
+	--color-acento: hsl(36, 79%, 57%);
+	--color-acento-hover: hsl(36, 67%, 51%);
+	--color-secundario: hsl(114, 16%, 54%);
+	--color-error: hsl(13, 51%, 53%);
+	--color-fondo: hsl(36, 33%, 97%);
+	--color-superficie: hsl(0, 0%, 100%);
+	--color-texto: hsl(208, 28%, 18%);
+	--color-texto-secundario: hsl(201, 11%, 41%);
+	--color-borde: hsl(40, 17%, 86%);
+
+	/* Tipografía */
+	--fuente-titulo: "Space Grotesk", sans-serif;
+	--fuente-cuerpo: "Inter", sans-serif;
+
+	--texto-xs: 0.75rem;
+	--texto-sm: 0.875rem;
+	--texto-base: 1rem;
+	--texto-lg: 1.25rem;
+	--texto-xl: 1.75rem;
+	--texto-2xl: 2.25rem;
+
+	/* Espaciado (escala consistente, evita valores "al ojo") */
+	--espacio-xs: 0.25rem;
+	--espacio-sm: 0.5rem;
+	--espacio-md: 1rem;
+	--espacio-lg: 1.5rem;
+	--espacio-xl: 2.5rem;
+	--altura-bottom-nav: 64px;
+	/* Bordes y sombras */
+	--radio-sm: 6px;
+	--radio-md: 12px;
+	--sombra-suave: 0 2px 8px rgba(27, 75, 90, 0.08);
+
+	--transition: all 0.4s ease;
+}
