@@ -30,20 +30,3 @@ main {
 	display: flex;
 	flex-direction: column;
 }
-
-.servicio {
-	padding: var(--espacio-md);
-	border: 1px solid var(--color-borde);
-	border-radius: var(--radio-md);
-	background-color: var(--color-superficie);
-	margin-bottom: var(--espacio-sm);
-	display: flex;
-	justify-content: space-between;
-	align-items: center;
-	color: var(--color-primario);
-	box-shadow: 2px 4px rgba(0, 0, 0, 0.1);
-}
-
-.servicio h3 {
-	font-size: var(--texto-lg);
-}

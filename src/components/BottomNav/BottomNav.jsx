@@ -1,6 +1,6 @@
 import {
 	IconHome2,
-	IconMapPin,
+	IconListSearch,
 	IconListCheck,
 	IconUser,
 } from "@tabler/icons-react";
@@ -14,8 +14,8 @@ export const BottomNav = () => {
 				<span>Inicio</span>
 			</a>
 			<a href="#" className="bottom-nav__item">
-				<IconMapPin size={22} stroke={1.8} />
-				<span>Mapa</span>
+				<IconListSearch size={22} stroke={1.8} />
+				<span>Servicios</span>
 			</a>
 			<a href="#" className="bottom-nav__item">
 				<IconListCheck size={22} stroke={1.8} />
