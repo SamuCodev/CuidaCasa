@@ -1,6 +1,6 @@
 import "./CardSolicitudActiva.css";
 
-export const CardSolicitudActiva = ({ badge, nombreProv, tiempoLlegada }) => {
+export const CardSolicitudActiva = ({ badge, nombreProv, categoria, infoSolicitud }) => {
 	return (
 		<article className="solicitud">
 			<div className="solicitud-header">
@@ -8,11 +8,9 @@ export const CardSolicitudActiva = ({ badge, nombreProv, tiempoLlegada }) => {
 				<span className="badge">{badge}</span>
 			</div>
 			<div className="solicitud-main">
-				<div>
 					<h3>{nombreProv}</h3>
-					<p className="tiempo-llegada">Tiempo de llegada aprox.</p>
-					<p>{tiempoLlegada}</p>
-				</div>
+					<p className="categoria">{categoria}</p>
+					<p className="info-solicitud">{infoSolicitud}</p>
 			</div>
 		</article>
 	);

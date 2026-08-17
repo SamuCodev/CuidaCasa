@@ -1,0 +1,58 @@
+.SolicitudesActivas-section{
+    background-color: var(--color-superficie);
+    display: flex;
+    padding: var(--espacio-sm);
+    flex-direction: column;
+    margin: var(--espacio-md);
+    border: 1px solid var(--color-borde);
+    border-radius: var(--radio-md);
+}
+
+.Solicitudes-section-header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.Solicitudes-section-header a{
+    text-decoration: none;
+    color: var(--color-primario);
+}
+
+.activas-historial-filtro{
+    display: flex;
+    gap: 8px;
+    width: 100%;
+    align-items: stretch;
+    margin-top: var(--espacio-md);
+    margin-bottom: var(--espacio-md);
+}
+
+.activas-historial-filtro a{
+    flex: 1 1 0;
+    background-color: var(--color-primario);
+    color: hsl(0, 0%, 100%);
+    text-decoration: none;
+    padding: 0.55rem 0.75rem;
+    border-radius: var(--radio-sm);
+    text-align: center;
+    justify-content: center;
+    transition: var(--transition);
+}
+
+.activas-historial-filtro a:hover{
+    background-color: var(--color-primario-oscuro);
+}
+
+.activas-historial-filtro .selected{
+    background-color: var(--color-primario-oscuro);
+}
+
+.solicitudes-container{
+    margin-top: var(--espacio-md);
+}
+
+
+.oculto{
+    display: none;
+}

@@ -19,10 +19,15 @@
 	font-size: var(--texto-lg);
 }
 
+.categoria{
+	border-bottom: 2px solid var(--color-borde);
+	margin-bottom: var(--espacio-sm);
+}
+
 p {
 	color: var(--color-texto);
-	font-weight: 600;
 	font-size: var(--texto-sm);
+	font-weight: 600;
 }
 
 .badge {
