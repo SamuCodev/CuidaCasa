@@ -1,4 +1,4 @@
-.login {
+.auth {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -8,7 +8,7 @@
     background-color: var(--color-secundario);
 }
 
-.card-login {
+.auth-card {
     background-color: var(--color-superficie);
     display: flex;
     align-items: center;
@@ -16,55 +16,62 @@
     line-height: 1.6;
     border: 2px solid var(--color-borde);
     border-radius: var(--radio-md);
-    padding: 4rem 2rem 4rem 2rem;
+    padding: 4rem 4rem 4rem 4rem;
     flex-direction: column;
 }
 
-.logo {
+.auth-card .logo {
     display: flex;
     flex-direction: column;
     align-items: center;
     margin-bottom: var(--espacio-lg);
 }
 
-.inputs {
+.auth-card .inputs {
     display: flex;
     flex-direction: column;
     gap: 2px;
     justify-content: center;
 }
 
-h2 {
+.auth-card h2 {
     color: var(--color-texto);
     font-weight: 600;
-    font-size: var(--texto-md);
+    font-size: var(--texto-lg);
+    margin-bottom: 1rem;
 }
 
-.inputs input {
+.auth-card .inputs input {
     width: 100%;
     border: 2px solid var(--color-borde);
     border-radius: var(--radio-sm);
     padding: 0.4rem 0.3rem 0.5rem;
 }
 
-span {
+.auth-card span {
     color: var(--color-texto-secundario);
     font-size: var(--texto-xs);
     font-weight: 600;
 }
 
-a {
+.auth-card a {
     text-decoration: none;
     color: var(--color-texto-secundario);
     font-weight: 600;
     margin-top: 1rem;
 }
 
-button {
+.auth-card h3 {
+    font-size: var(--texto-sm);
+    color: var(--color-texto);
+    font-weight: 600;
+}
+
+.auth-card button {
     width: 100%;
     background-color: var(--color-secundario);
     border: 2px solid var(--color-borde);
-    border-radius: var(--radio-md);
+    border-radius: var(--radio-sm);
     padding: 0.7rem 0 0.7rem 0;
     transition: var(--transition);
     cursor: pointer;
@@ -72,7 +79,7 @@ button {
     margin-top: 1rem;
 }
 
-button:hover {
+.auth-card button:hover {
     transform: translateY(-6px);
     background-color: hsl(114, 16%, 34%);
 }

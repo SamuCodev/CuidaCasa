@@ -1,4 +1,4 @@
-.SolicitudesActivas-section{
+.SolicitudesActivas-section {
     background-color: var(--color-superficie);
     display: flex;
     padding: var(--espacio-sm);
@@ -6,20 +6,21 @@
     margin: var(--espacio-md);
     border: 1px solid var(--color-borde);
     border-radius: var(--radio-md);
+    padding-bottom: calc(var(--altura-bottom-nav) + var(--espacio-lg));
 }
 
-.Solicitudes-section-header{
+.Solicitudes-section-header {
     display: flex;
     justify-content: space-between;
     align-items: center;
 }
 
-.Solicitudes-section-header a{
+.Solicitudes-section-header a {
     text-decoration: none;
     color: var(--color-primario);
 }
 
-.activas-historial-filtro{
+.activas-historial-filtro {
     display: flex;
     gap: 8px;
     width: 100%;
@@ -28,7 +29,7 @@
     margin-bottom: var(--espacio-md);
 }
 
-.activas-historial-filtro a{
+.activas-historial-filtro a {
     flex: 1 1 0;
     background-color: var(--color-primario);
     color: hsl(0, 0%, 100%);
@@ -40,19 +41,18 @@
     transition: var(--transition);
 }
 
-.activas-historial-filtro a:hover{
+.activas-historial-filtro a:hover {
     background-color: var(--color-primario-oscuro);
 }
 
-.activas-historial-filtro .selected{
+.activas-historial-filtro .selected {
     background-color: var(--color-primario-oscuro);
 }
 
-.solicitudes-container{
+.solicitudes-container {
     margin-top: var(--espacio-md);
 }
 
-
-.oculto{
+.oculto {
     display: none;
 }

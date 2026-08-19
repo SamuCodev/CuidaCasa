@@ -1,6 +1,7 @@
 .dashboard {
-	background-color: var(--color-fondo);
-	display: flex;
-	padding: var(--espacio-md);
-	flex-direction: column;
+    padding-bottom: calc(var(--altura-bottom-nav) + var(--espacio-lg));
+    background-color: var(--color-fondo);
+    display: flex;
+    padding: var(--espacio-md);
+    flex-direction: column;
 }

@@ -1,10 +1,10 @@
 import { IconHome } from "@tabler/icons-react";
-import "./Login.css";
+import "../../styles/auth.css";
 
 export const Login = () => {
     return (
-        <section className="login">
-            <div className="card-login">
+        <section className="auth">
+            <div className="auth-card">
                 <div className="logo">
                     <IconHome size={55} stroke={2} />
                     <h1>CuidaCasa</h1>
