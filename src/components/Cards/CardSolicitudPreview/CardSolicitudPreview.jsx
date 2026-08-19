@@ -1,6 +1,6 @@
-import "./CardProveedor.css";
+import "./CardSolicitudPreview.css";
 
-export const CardProveedor = ({
+export const CardSolicitudPreview = ({
 	nombreProv,
 	categoria,
 	distancia,
@@ -10,7 +10,7 @@ export const CardProveedor = ({
 		<article className="servicio">
 			<div className="servicio-info">
 				<h3>{nombreProv}</h3>
-				<p>{categoria}</p>
+				<p className="categoria">{categoria}</p>
 				<p>{distancia}</p>
 			</div>
 			<p>{calificacion} ⭐</p>

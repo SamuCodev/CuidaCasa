@@ -8,9 +8,9 @@ import "./styles/reset.css";
 import "./styles/global.css";
 
 createRoot(document.getElementById("root")).render(
-	<StrictMode>
-		<Header />
-		<App />
-		<BottomNav />
-	</StrictMode>,
+    <StrictMode>
+        {/* <Header /> */}
+        <App />
+        {/* <BottomNav /> */}
+    </StrictMode>,
 );

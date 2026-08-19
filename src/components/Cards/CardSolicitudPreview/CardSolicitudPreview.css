@@ -13,4 +13,15 @@
 
 .servicio h3 {
 	font-size: var(--texto-lg);
+	margin-bottom: 5px;
+}
+
+.categoria{
+	border-bottom: 2px solid var(--color-borde);
+	margin-bottom: 10px;
+}
+
+p{
+	color: var(--color-primario);
+	font-weight: 600;
 }
