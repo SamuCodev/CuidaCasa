@@ -24,26 +24,24 @@
     display: flex;
     gap: 8px;
     width: 100%;
-    align-items: stretch;
-    margin-top: var(--espacio-sm);
-    margin-bottom: var(--espacio-sm);
+    align-items: safe;
 }
 
 .mapa-lista-filter a {
     flex: 1 1 0;
     background-color: var(--color-primario);
-    color: var(--color-superficie);
+    color: hsl(0, 0%, 100%);
+    text-decoration: none;
     padding: 0.55rem 0.75rem;
     border-radius: var(--radio-sm);
-    text-decoration: none;
-    display: flex;
-    gap: 8px;
-    flex-direction: row;
     text-align: center;
     justify-content: center;
+    display: flex;
+    gap: var(--espacio-xs);
     align-items: center;
-    font-weight: 700;
-    font-size: 0.8rem;
+    font-weight: 600;
+    font-size: var(--texto-xs);
+    transition: background-color 0.2s ease;
 }
 
 .filters {

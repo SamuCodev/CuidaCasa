@@ -1,5 +1,6 @@
 import { StrictMode } from "react";
 import { createRoot } from "react-dom/client";
+import { BrowserRouter } from "react-router-dom";
 import { BottomNav } from "./components/BottomNav/BottomNav";
 import { App } from "./App";
 import { Header } from "./components/Header/Header";
@@ -9,8 +10,8 @@ import "./styles/global.css";
 
 createRoot(document.getElementById("root")).render(
     <StrictMode>
-        {/* <Header /> */}
-        <App />
-        {/* <BottomNav /> */}
+        <BrowserRouter>
+            <App />
+        </BrowserRouter>
     </StrictMode>,
 );

@@ -10,12 +10,12 @@ export const Login = () => {
                     <h1>CuidaCasa</h1>
                 </div>
                 <div className="inputs">
-                    <h2>Correo</h2>
+                    <label>Correo</label>
                     <div className="email-input">
                         <input type="email" />
                         <span>Ej: user@gmail.com</span>
                     </div>
-                    <h2>Contraseña</h2>
+                    <label>Contraseña</label>
                     <div className="passw-input">
                         <input type="password" />
                         <span>Ingrese una contraseña correcta</span>
