@@ -3,7 +3,7 @@
     display: flex;
     padding: var(--espacio-sm);
     flex-direction: column;
-    margin: var(--espacio-sm);
+    margin: var(--espacio-md);
     border-radius: var(--radio-md);
     border: 1px solid var(--color-borde);
     padding-bottom: calc(var(--altura-bottom-nav) + var(--espacio-lg));
@@ -11,43 +11,47 @@
 
 .servicios-section-header {
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     align-items: center;
-}
-
-.servicios-section-header a {
-    text-decoration: none;
-    color: var(--color-primario);
+    margin-bottom: 1rem;
 }
 
 .mapa-lista-filter {
     display: flex;
-    gap: 8px;
+    align-items: center;
+    gap: var(--espacio-xs);
+    margin-bottom: var(--espacio-md);
     width: 100%;
-    align-items: safe;
 }
 
 .mapa-lista-filter a {
-    flex: 1 1 0;
+    flex: 1;
     background-color: var(--color-primario);
     color: hsl(0, 0%, 100%);
     text-decoration: none;
-    padding: 0.55rem 0.75rem;
+    padding: 0.6rem;
     border-radius: var(--radio-sm);
-    text-align: center;
-    justify-content: center;
     display: flex;
-    gap: var(--espacio-xs);
+    justify-content: center;
     align-items: center;
+    gap: var(--espacio-xs);
     font-weight: 600;
-    font-size: var(--texto-xs);
+    font-size: var(--texto-sm);
     transition: background-color 0.2s ease;
+}
+
+.mapa-lista-filter a:hover {
+    background-color: var(--color-primario-oscuro);
+}
+
+.mapa-lista-filter .selected {
+    background-color: var(--color-primario-oscuro);
 }
 
 .filters {
     display: flex;
     width: 100%;
-    gap: 8px;
+    gap: var(--espacio-sm);
     padding: 0;
     flex-wrap: wrap;
 }
@@ -89,8 +93,4 @@
     font-size: var(--texto-lg);
     color: var(--color-texto-secundario);
     margin-bottom: var(--espacio-sm);
-}
-
-.mapa-lista-filter .selected {
-    background: var(--color-primario-oscuro);
 }

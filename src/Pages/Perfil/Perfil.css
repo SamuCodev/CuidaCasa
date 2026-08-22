@@ -1,0 +1,187 @@
+.perfil {
+    background-color: var(--color-fondo);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    border: 1px solid var(--color-borde);
+    border-radius: var(--radio-md);
+    margin: var(--espacio-md);
+    overflow: hidden;
+}
+
+.user-info {
+    background-color: var(--color-superficie);
+    width: 100%;
+    padding: var(--espacio-md);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-bottom: 1px solid var(--color-borde);
+}
+
+.user-info .avatar {
+    width: 64px;
+    height: 64px;
+    border: 1px solid var(--color-borde);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    background-color: rgb(24, 97, 60);
+    color: white;
+    font-weight: 800;
+    font-size: 1.2rem;
+}
+
+.user-info h2 {
+    font-size: var(--texto-xl);
+    font-weight: 600;
+    color: var(--color-texto);
+}
+
+.user-info p {
+    color: var(--color-texto-secundario);
+    font-size: var(--texto-xs);
+    font-weight: 600;
+}
+
+.user-info button {
+    margin-top: 1rem;
+    display: flex;
+    background-color: transparent;
+    border: 1px solid var(--color-primario);
+    border-radius: var(--radio-md);
+    font-size: var(--texto-sm);
+    align-items: center;
+    justify-self: center;
+    gap: 5px;
+    font-weight: 600;
+    cursor: pointer;
+    color: var(--color-primario);
+    box-shadow: 2px 4px rgba(0, 0, 0, 0.1);
+    transition: var(--transition);
+}
+
+.user-info button:hover {
+    transform: translateY(4px);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.profile-main {
+    width: 100%;
+    padding: var(--espacio-md);
+    display: flex;
+    flex-direction: column;
+}
+
+.profile-main-header {
+    display: flex;
+    justify-content: space-between;
+}
+
+.profile-main-header h3 {
+    font-size: var(--texto-base);
+    color: var(--color-texto-secundario);
+}
+
+.profile-main-header a {
+    font-size: var(--texto-sm);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+    font-weight: 600;
+    text-decoration: none;
+    color: var(--color-texto-secundario);
+}
+
+.direcciones-container {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    margin-top: var(--espacio-md);
+}
+
+.card-direccion {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: var(--color-superficie);
+    border: 1px solid var(--color-borde);
+    border-radius: var(--radio-md);
+    padding: var(--espacio-xs);
+    transition: var(--transition);
+}
+
+.card-direccion .direccion {
+    display: flex;
+    align-items: center;
+    background-color: var(--color-superficie);
+    gap: var(--espacio-sm);
+}
+
+.direccion-info h3 {
+    color: var(--color-texto);
+    font-size: var(--texto-base);
+}
+
+.direccion-info p {
+    color: var(--color-texto-secundario);
+    font-size: var(--texto-xs);
+}
+
+.badge {
+    font-size: var(--texto-xs);
+}
+
+.card-direccion:hover {
+    transform: translateY(-6px);
+    cursor: pointer;
+    border: 1px solid var(--color-primario);
+}
+
+.options {
+    margin-top: var(--espacio-md);
+    margin-bottom: var(--espacio-md);
+}
+
+.opt {
+    display: flex;
+    padding: var(--espacio-xs);
+    padding-bottom: var(--espacio-sm);
+    gap: var(--espacio-sm);
+    color: var(--color-texto-secundario);
+    text-decoration: none;
+    align-items: center;
+    border-bottom: 1px solid var(--color-borde);
+    transition: var(--transition);
+    margin-bottom: 1rem;
+}
+
+.opt:hover {
+    transform: translateY(-4px);
+    border-bottom: 1px solid var(--color-primario);
+}
+
+.btn-logout {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: var(--espacio-sm);
+    padding: var(--espacio-sm);
+    background-color: transparent;
+    border: 2px solid var(--color-borde);
+    border-radius: var(--radio-md);
+    color: var(--color-texto);
+    background-color: var(--color-superficie);
+    cursor: pointer;
+    transition: var(--transition);
+}
+
+.btn-logout:hover {
+    transform: translateY(-6px);
+    border: 2px solid red;
+    color: red;
+}

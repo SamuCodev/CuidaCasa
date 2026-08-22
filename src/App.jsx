@@ -5,6 +5,8 @@ import { Home } from "./Pages/Home/Home";
 import { SolicitudesSection } from "./Pages/Solicitudes/SolicitudesSection";
 import { Login } from "../src/Pages/Login/Login";
 import { Registro } from "./Pages/Register/Registro";
+import { Perfil } from "./Pages/Perfil/Perfil";
+
 import "./App.css";
 
 export const App = () => {
@@ -17,7 +19,7 @@ export const App = () => {
                 <Route path="/" element={<Home />} />
                 <Route path="/servicios" element={<ServiciosSection />} />
                 <Route path="/solicitudes" element={<SolicitudesSection />} />
-                <Route path="/perfil" element={<Home />} />
+                <Route path="/perfil" element={<Perfil />} />
             </Route>
         </Routes>
     );

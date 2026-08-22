@@ -3,9 +3,9 @@ import {
     IconMap2,
     IconList,
     IconBell,
-    IconGrid4x4,
     IconStar,
     IconLocation,
+    IconCategory,
 } from "@tabler/icons-react";
 import { CardSolicitudPreview } from "../../components/Cards/CardSolicitudPreview/CardSolicitudPreview";
 import "./ServiciosSection.css";
@@ -14,28 +14,22 @@ export const ServiciosSection = () => {
     return (
         <section className="servicios-section">
             <div className="servicios-section-header">
-                <a href="#">
-                    <IconArrowLeft size={25} stroke={2} />
-                </a>
                 <h2>Servicios</h2>
-                <a href="#">
-                    <IconBell size={25} stroke={2} />
-                </a>
             </div>
             <div className="mapa-lista-filter">
                 <a href="#" className="lista selected">
-                    <IconList size={22} stroke={2} />
+                    <IconList size={25} stroke={2} />
                     Lista
                 </a>
                 <a href="#" className="mapa">
-                    <IconMap2 size={22} stroke={2} />
+                    <IconMap2 size={25} stroke={2} />
                     Mapa
                 </a>
             </div>
             <div className="filters">
                 <div className="filter-field">
                     <span className="filter-field__icon">
-                        <IconGrid4x4 size={18} stroke={2} />
+                        <IconCategory size={18} stroke={2} />
                     </span>
                     <select name="categoria" id="categoria">
                         <option value="">Categoria</option>

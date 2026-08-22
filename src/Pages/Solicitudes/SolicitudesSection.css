@@ -11,13 +11,8 @@
 
 .Solicitudes-section-header {
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     align-items: center;
-}
-
-.Solicitudes-section-header a {
-    text-decoration: none;
-    color: var(--color-primario);
 }
 
 .activas-historial-filtro {
