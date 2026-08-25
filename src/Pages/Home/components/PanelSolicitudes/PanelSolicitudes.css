@@ -1,11 +1,11 @@
-.solicitudes {
+.panel-solicitudes {
 	display: flex;
 	flex-direction: column;
 	margin-top: var(--espacio-sm);
 }
 
-.solicitudes h2 {
-	font-family: "Inter", sans-serif;
+.panel-solicitudes h2 {
+	font-family: var(--fuente-cuerpo);
 	font-size: var(--texto-lg);
 	color: var(--color-texto-secundario);
 }

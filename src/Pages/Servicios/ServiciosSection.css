@@ -17,9 +17,9 @@
 }
 
 .mapa-lista-filter {
-    display: flex;
-    align-items: center;
-    gap: var(--espacio-xs);
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--espacio-sm);
     margin-bottom: var(--espacio-md);
     width: 100%;
 }
@@ -29,14 +29,14 @@
     background-color: var(--color-primario);
     color: hsl(0, 0%, 100%);
     text-decoration: none;
-    padding: 0.6rem;
+    padding: 0.45rem 0;
     border-radius: var(--radio-sm);
     display: flex;
     justify-content: center;
     align-items: center;
     gap: var(--espacio-xs);
     font-weight: 600;
-    font-size: var(--texto-sm);
+    font-size: var(--texto-xs);
     transition: background-color 0.2s ease;
 }
 

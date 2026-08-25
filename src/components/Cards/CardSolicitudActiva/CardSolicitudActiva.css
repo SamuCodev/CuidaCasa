@@ -19,7 +19,7 @@
 	font-size: var(--texto-lg);
 }
 
-.categoria{
+.categoria {
 	border-bottom: 2px solid var(--color-borde);
 	margin-bottom: var(--espacio-sm);
 }
