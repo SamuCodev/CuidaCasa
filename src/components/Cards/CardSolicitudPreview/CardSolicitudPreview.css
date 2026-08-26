@@ -9,6 +9,8 @@
     align-items: center;
     color: var(--color-primario);
     box-shadow: 2px 4px rgba(0, 0, 0, 0.1);
+    transition: var(--transition);
+    cursor: pointer;
 }
 
 .servicio h3 {
@@ -24,4 +26,9 @@
 p {
     color: var(--color-primario);
     font-weight: 600;
+}
+
+.servicio:hover {
+    border: 1px solid var(--color-primario);
+    transform: translateY(-6px);
 }

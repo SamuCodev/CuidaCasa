@@ -24,7 +24,7 @@ export const Perfil = () => {
             <div className="profile-main">
                 <div className="profile-main-header">
                     <h3>Mis direcciones</h3>
-                    <a href="">
+                    <a href="#">
                         <IconPlus size={18} stroke={1.8} /> Agregar
                     </a>
                 </div>

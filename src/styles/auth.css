@@ -10,14 +10,12 @@
 
 .auth-card {
     background-color: var(--color-superficie);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    line-height: 1.6;
+    width: min(100%, 620px);
+    align-items: stretch;
+    padding: clamp(1.5rem, 4vw, 2.5rem);
+    box-shadow: var(--sombra-suave);
     border: 2px solid var(--color-borde);
     border-radius: var(--radio-md);
-    padding: 4rem 4rem 4rem 4rem;
-    flex-direction: column;
 }
 
 .auth-card .logo {
@@ -30,27 +28,24 @@
 .auth-card .inputs {
     display: flex;
     flex-direction: column;
-    gap: 2px;
+    gap: var(--espacio-md);
     justify-content: center;
 }
 
 .auth-card label {
-    color: var(--color-primario);
+    color: var(--color-texto);
     font-weight: 600;
     font-size: var(--texto-base);
 }
 
 .auth-card .inputs input {
     width: 100%;
-    border: 2px solid var(--color-borde);
+    border: 1px solid var(--color-borde);
     border-radius: var(--radio-sm);
-    padding: 0.4rem 0.3rem 0.5rem;
-}
-
-.auth-card span {
-    color: var(--color-texto-secundario);
-    font-size: var(--texto-xs);
-    font-weight: 600;
+    padding: 0.7rem 0.8rem;
+    font-size: var(--texto-sm);
+    background-color: var(--color-fondo);
+    color: var(--color-texto);
 }
 
 .auth-card a {
@@ -60,6 +55,7 @@
     font-size: var(--texto-xs);
     margin-top: var(--espacio-sm);
     transition: var(--transition);
+    font-size: var(--texto-sm);
 }
 
 .auth-card a:hover {
@@ -68,7 +64,7 @@
 
 .auth-card button {
     width: 100%;
-    background-color: var(--color-secundario);
+    background-color: var(--color-primario);
     border: 2px solid var(--color-borde);
     border-radius: var(--radio-sm);
     padding: 0.7rem 0 0.7rem 0;
@@ -76,9 +72,23 @@
     cursor: pointer;
     color: white;
     margin-top: 1rem;
+    margin-bottom: var(--espacio-lg);
 }
 
 .auth-card button:hover {
-    transform: translateY(-6px);
-    background-color: hsl(114, 16%, 34%);
+    transform: translateY(-2px);
+    background-color: var(--color-primario-oscuro);
+}
+
+.auth-card p {
+    text-align: center;
+    gap: var(--espacio-xs);
+    color: var(--color-texto-secundario);
+    font-weight: 500;
+    font-size: var(--texto-sm);
+}
+
+.auth-card p a {
+    color: var(--color-texto);
+    font-weight: 600;
 }

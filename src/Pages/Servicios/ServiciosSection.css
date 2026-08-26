@@ -1,12 +1,11 @@
 .servicios-section {
-    background-color: var(--color-superficie);
+    background-color: var(--color-fondo);
     display: flex;
     padding: var(--espacio-sm);
     flex-direction: column;
     margin: var(--espacio-md);
-    border-radius: var(--radio-md);
-    border: 1px solid var(--color-borde);
     padding-bottom: calc(var(--altura-bottom-nav) + var(--espacio-lg));
+    margin-top: var(--espacio-xl);
 }
 
 .servicios-section-header {
@@ -29,14 +28,14 @@
     background-color: var(--color-primario);
     color: hsl(0, 0%, 100%);
     text-decoration: none;
-    padding: 0.45rem 0;
+    padding: 0.55rem 0.75rem;
     border-radius: var(--radio-sm);
     display: flex;
     justify-content: center;
     align-items: center;
     gap: var(--espacio-xs);
     font-weight: 600;
-    font-size: var(--texto-xs);
+    font-size: var(--texto-md);
     transition: background-color 0.2s ease;
 }
 
@@ -50,47 +49,81 @@
 
 .filters {
     display: flex;
-    width: 100%;
     gap: var(--espacio-sm);
     padding: 0;
     flex-wrap: wrap;
+    align-items: stretch;
 }
 
 .filter-field {
-    position: relative;
     flex: 1 1 100%;
+    display: flex;
+    align-items: center;
+    min-height: 48px;
+    padding: 0.35rem 0.65rem;
+    background-color: var(--color-superficie);
+    border: 1px solid var(--color-borde);
+    border-radius: 999px;
+    box-shadow: var(--sombra-suave);
+    transition: var(--transition);
 }
 
-.filter-field__icon {
-    position: absolute;
-    left: 10px;
-    top: 50%;
-    transform: translateY(-50%);
+.filter-field:focus-within {
+    border-color: var(--color-primario);
+    box-shadow: 0 0 0 3px
+        color-mix(in srgb, var(--color-primario) 12%, transparent);
+}
+
+.filter-field__label {
     color: var(--color-primario);
     display: flex;
     align-items: center;
-    justify-content: center;
-    pointer-events: none;
+    gap: 0.35rem;
+    padding-right: 0.6rem;
+    border-right: 1px solid var(--color-borde);
+    font-size: var(--texto-xs);
+    font-weight: 700;
+    white-space: nowrap;
 }
 
 .filter-field select {
-    width: 100%;
-    min-height: 42px;
-    border: 2px solid var(--color-borde);
-    border-radius: var(--radio-md);
-    padding: 0.45rem 0.75rem 0.45rem 2.15rem;
-    background-color: var(--color-superficie);
+    min-width: 0;
+    flex: 1;
+    border: 0;
+    padding: 0.35rem 0 0.35rem 0.6rem;
+    background-color: transparent;
     color: var(--color-texto-secundario);
     font: inherit;
-    font-size: 0.8rem;
+    font-size: var(--texto-xs);
+    font-weight: 600;
+    cursor: pointer;
+    outline: none;
 }
 
 .servicios-container {
     margin-top: var(--espacio-md);
 }
 
-.servicios-container h2 {
+.servicios-section h2 {
     font-size: var(--texto-lg);
     color: var(--color-texto-secundario);
     margin-bottom: var(--espacio-sm);
+    margin-top: var(--espacio-md);
+}
+
+@media (min-width: 728px) {
+    .servicios-section .filters {
+        flex-wrap: nowrap;
+        justify-content: flex-start;
+    }
+
+    .servicios-section .filter-field {
+        flex: 0 1 auto;
+        min-width: 172px;
+    }
+    .servicios-section .servicios-container {
+        display: grid;
+        gap: var(--espacio-sm);
+        grid-template-columns: repeat(3, 1fr);
+    }
 }

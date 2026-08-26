@@ -9,12 +9,26 @@ export const Solicitudes = () => {
                 <CardSolicitudActiva
                     badge={"En proceso"}
                     nombreProv={"Alfonso Lopez"}
-                    tiempoLlegada={"13 Minutos"}
+                    categoria={"Jardineria"}
+                    infoSolicitud={"Esperando informacion del proovedor..."}
                 />
                 <CardSolicitudActiva
                     badge={"Activa"}
                     nombreProv={"Pepito Perez"}
-                    tiempoLlegada={"10 minutos"}
+                    categoria={"Cerrajero"}
+                    infoSolicitud={"Esperando confirmacion..."}
+                />
+                <CardSolicitudActiva
+                    badge={"En proceso"}
+                    nombreProv={"Alfonso Lopez"}
+                    categoria={"Jardineria"}
+                    infoSolicitud={"Esperando informacion del proovedor..."}
+                />
+                <CardSolicitudActiva
+                    badge={"Activa"}
+                    nombreProv={"Pepito Perez"}
+                    categoria={"Cerrajero"}
+                    infoSolicitud={"Esperando confirmacion..."}
                 />
             </div>
         </aside>

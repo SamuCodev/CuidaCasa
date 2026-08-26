@@ -4,4 +4,54 @@
     display: flex;
     padding: var(--espacio-md);
     flex-direction: column;
+    margin-top: var(--espacio-lg);
+}
+
+.title-home {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    margin-bottom: var(--espacio-lg);
+    gap: var(--espacio-md);
+}
+
+.saludo h1 {
+    font-family: var(--fuente-titulo);
+    font-size: var(--texto-2xl);
+    font-weight: 700;
+    color: var(--color-texto);
+}
+
+.saludo p {
+    font-size: var(--texto-base);
+    color: var(--color-texto-secundario);
+}
+
+.title-home .ubicacion {
+    display: flex;
+    align-items: center;
+    justify-content: centers;
+    border: 2px solid var(--color-borde);
+    background-color: var(--color-superficie);
+    color: var(--color-primario);
+    gap: 5px;
+    padding: var(--espacio-sm);
+    border-radius: var(--radio-md);
+    cursor: pointer;
+    transition: var(--transition);
+}
+
+.ubicacion:hover {
+    transform: translateY(-6px);
+    border: 2px solid var(--color-primario);
+}
+
+.buscador {
+    padding: var(--espacio-md) var(--espacio-sm) var(--espacio-md)
+        var(--espacio-sm);
+    border: 2px solid var(--color-borde);
+    border-radius: var(--radio-md);
+    margin-bottom: var(--espacio-md);
+    outline: none;
 }

@@ -1,21 +1,17 @@
-import { IconArrowLeft, IconBell } from "@tabler/icons-react";
 import { CardSolicitudActiva } from "../../components/Cards/CardSolicitudActiva/CardSolicitudActiva";
 import { CardSolicitudCompleta } from "../../components/Cards/CardSolicitudCompleta/CardSolicitudCompleta";
 
 import "./SolicitudesSection.css";
 export const SolicitudesSection = () => {
     return (
-        <section className="SolicitudesActivas-section">
-            <div className="Solicitudes-section-header">
-                <h2>Solicitudes</h2>
-            </div>
-            <div className="activas-historial-filtro">
+        <section className="Solicitudes-activas__section">
+            <div className="activas-historial__filtro">
                 <a href="#" className="selected">
                     Activas
                 </a>
                 <a href="#">Historial</a>
             </div>
-            <div className="solicitudes-container">
+            <div className="solicitudes-container__activas oculto">
                 <CardSolicitudActiva
                     badge={"En camino"}
                     nombreProv={"Andres Gutierrez"}
@@ -41,7 +37,7 @@ export const SolicitudesSection = () => {
                     infoSolicitud={"Empezo hace 26 min."}
                 />
             </div>
-            <div className="solicitudes-container oculto">
+            <div className="solicitudes-container__completadas">
                 <CardSolicitudCompleta
                     nombreProv={"Alberto Perez"}
                     categoria={"Plomeria"}

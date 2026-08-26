@@ -1,0 +1,13 @@
+@media (min-width: 1024px) {
+    .app-layout {
+        display: flex;
+    }
+
+    .app-content {
+        flex: 1;
+        margin-left: 220px;
+    }
+    .app-content Header {
+        display: none;
+    }
+}

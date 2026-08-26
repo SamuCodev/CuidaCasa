@@ -6,10 +6,12 @@ import {
     IconUser,
 } from "@tabler/icons-react";
 import "./BottomNav.css";
+import { Header } from "../Header/Header";
 
 export const BottomNav = () => {
     return (
         <nav className="bottom-nav">
+            <Header />
             <NavLink
                 to="/"
                 end

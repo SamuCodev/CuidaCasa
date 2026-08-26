@@ -2,7 +2,6 @@
 
 body {
     background-color: var(--color-fondo);
-    max-width: 728px;
     min-height: 100vh;
     font-family: var(--fuente-cuerpo);
     display: flex;
@@ -13,19 +12,4 @@ body {
 h1 {
     font-family: var(--fuente-titulo);
     font-size: var(--texto-xl);
-}
-
-@media (min-width: 640px) {
-    /* tablets pequeñas */
-}
-@media (min-width: 1024px) {
-    body {
-        width: 100%;
-    }
-}
-@media (min-width: 1280px) {
-    body {
-        width: 100%;
-    }
-    /* pantallas grandes */
 }
