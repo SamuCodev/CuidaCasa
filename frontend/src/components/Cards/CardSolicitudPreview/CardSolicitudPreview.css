@@ -8,7 +8,7 @@
     justify-content: space-between;
     align-items: center;
     color: var(--color-primario);
-    box-shadow: 2px 4px rgba(0, 0, 0, 0.1);
+    box-shadow: var(--sombra-suave);
     transition: var(--transition);
     cursor: pointer;
 }
