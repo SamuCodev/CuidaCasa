@@ -15,44 +15,51 @@
     margin-bottom: 1rem;
 }
 
-.mapa-lista-filter {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: var(--espacio-sm);
-    margin-bottom: var(--espacio-md);
-    width: 100%;
-}
-
-.mapa-lista-filter a {
-    flex: 1;
-    background-color: var(--color-primario);
-    color: hsl(0, 0%, 100%);
-    text-decoration: none;
-    padding: 0.55rem 0.75rem;
-    border-radius: var(--radio-sm);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: var(--espacio-xs);
-    font-weight: 600;
-    font-size: var(--texto-md);
-    transition: background-color 0.2s ease;
-}
-
-.mapa-lista-filter a:hover {
-    background-color: var(--color-primario-oscuro);
-}
-
-.mapa-lista-filter .selected {
-    background-color: var(--color-primario-oscuro);
-}
-
 .filters {
     display: flex;
     gap: var(--espacio-sm);
     padding: 0;
     flex-wrap: wrap;
     align-items: stretch;
+}
+
+.filters button {
+    flex: 1 1;
+    display: flex;
+    align-items: center;
+    min-height: 48px;
+    padding: 0.35rem 0.65rem;
+    background-color: var(--color-superficie);
+    border: 1px solid var(--color-borde);
+    border-radius: 999px;
+    box-shadow: var(--sombra-suave);
+    transition: var(--transition);
+    text-decoration: none;
+    justify-content: center;
+    color: var(--color-primario);
+    gap: var(--espacio-sm);
+    transition: var(--transition);
+}
+
+.filters button:hover {
+    background-color: var(--color-primario-oscuro);
+    border: 1px solid var(--color-primario);
+    color: white;
+}
+
+.filters button {
+    font: inherit;
+    cursor: pointer;
+}
+
+.filters .selected {
+    background-color: var(--color-primario);
+    color: hsl(0, 0%, 100%);
+}
+
+.seleccionado {
+    background-color: var(--color-primario);
+    color: hsl(0, 0%, 100%);
 }
 
 .filter-field {
@@ -100,8 +107,16 @@
     outline: none;
 }
 
+.containers {
+    display: flex;
+    flex-direction: column;
+    margin: 0 auto;
+    padding: 0;
+}
+
 .servicios-container {
     margin-top: var(--espacio-md);
+    display: flex;
 }
 
 .servicios-section h2 {
@@ -109,6 +124,15 @@
     color: var(--color-texto-secundario);
     margin-bottom: var(--espacio-sm);
     margin-top: var(--espacio-md);
+}
+
+.mapa-container {
+    z-index: 1;
+}
+
+.mapa-container .mapa {
+    height: 65vh;
+    width: 100%;
 }
 
 @media (min-width: 728px) {
@@ -125,5 +149,9 @@
         display: grid;
         gap: var(--espacio-sm);
         grid-template-columns: repeat(3, 1fr);
+    }
+
+    .mapa-container .mapa {
+        height: 80vh;
     }
 }

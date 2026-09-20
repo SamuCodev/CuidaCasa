@@ -182,6 +182,7 @@
     background-color: var(--color-superficie);
     cursor: pointer;
     transition: var(--transition);
+    text-decoration: none;
 }
 
 .btn-logout:hover {

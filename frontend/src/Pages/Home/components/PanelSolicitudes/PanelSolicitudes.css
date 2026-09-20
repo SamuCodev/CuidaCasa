@@ -16,7 +16,7 @@
     margin-top: var(--espacio-sm);
 }
 
-@media (min-width: 1024px) {
+@media (min-width: 728px) {
     .solicitudes .solicitudes-container {
         display: grid;
         grid-template-columns: repeat(3, 1fr);

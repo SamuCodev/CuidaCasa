@@ -1,104 +1,40 @@
-from fastapi import FastAPI, HTTPException,status
-from pydantic import BaseModel
-from typing import Optional
-
-class UsuarioCrear(BaseModel):
-    nombre: str
-    email: str
-
-
-class Usuario(BaseModel):
-    id: int
-    nombre: str
-    email: str
-
-class UsuarioActualizar(BaseModel):
-    nombre: str
-    email: str
+from fastapi import FastAPI, HTTPException,status, Depends
+from fastapi.middleware.cors import CORSMiddleware
+from sqlalchemy.orm import Session
+from models import Usuario
+from database import get_db
+from schemas import UsuarioCreate, UsuarioResponse
+from security import hashear_pwd
+from sqlalchemy.exc import IntegrityError
 
 app = FastAPI()
 
-@app.get("/")
-def inicio():
-    return {"mensaje": "Hola desde FastAPI"}
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=["http://localhost:5173"],
+    allow_credentials=True,
+    allow_methods=["*"],
+    allow_headers=["*"]
+)
 
+@app.post("/usuarios", response_model=UsuarioResponse)
+def registrar_usuario(usuario: UsuarioCreate, db: Session = Depends(get_db)):
+    password_hash = hashear_pwd(usuario.password)
 
-usuarios = [
-    {
-        "id": 1,
-        "nombre": "Samuel",
-        "email": "samuel@gmail.com"
-    },
-    {
-        "id": 2,
-        "nombre": "Emanuel",
-        "email": "Emanuel@gmail.com"
-    }
-]
-
-@app.get("/users", response_model=list[Usuario])
-def obtener_todos_los_usuarios(nombre: str | None = None):
-    if nombre is None:
-        return usuarios
-    usuarios_encontrados = []
-
-    for usuario in usuarios:
-        if usuario["nombre"] == nombre:
-            usuarios_encontrados.append(usuario)
-
-    if not usuarios_encontrados:
-        raise HTTPException(
-            status_code=status.HTTP_404_NOT_FOUND,
-            detail="El nombre no existe"
-        )
-
-    return usuarios_encontrados
-
-@app.get("/users/{id}", response_model=Usuario)
-def obtener_usuario(id:int):
-    for usuario in usuarios:
-        if usuario["id"] == id:
-            return usuario
-
-    raise HTTPException(
-        status_code=status.HTTP_404_NOT_FOUND,
-        detail="El Id ingresado no existe"
+    nuevo_usuario = Usuario(
+        correo = usuario.correo,
+        nombre = usuario.nombre,
+        apellido = usuario.apellido,
+        rol = usuario.rol,
+        password_hash=password_hash
     )
 
-@app.post("/users",
-        response_model=Usuario,
-        status_code=status.HTTP_201_CREATED)
+    db.add(nuevo_usuario)
+    try:
+        db.commit()
+    except IntegrityError:
+        db.rollback()
+        raise HTTPException(status_code=400, detail="Ese correo ya esta registrado")
+    db.refresh(nuevo_usuario)
 
-def crear_usuario(usuario: UsuarioCrear):
-    nuevo_usuario = {
-        "id": len(usuarios) + 1,
-        "nombre": usuario.nombre,
-        "email": usuario.email
-    }
-    usuarios.append(nuevo_usuario)
     return nuevo_usuario
-
-@app.put("/users/{id}", response_model=Usuario)
-def actualizar_usuario(id: int, usuario: UsuarioActualizar):
-    for usuario_existente in usuarios:
-        if usuario_existente["id"] == id:
-            usuario_existente["nombre"] = usuario.nombre
-            usuario_existente["email"] = usuario.email
-            return usuario_existente
-
-    raise HTTPException(
-        status_code=status.HTTP_404_NOT_FOUND,
-        detail="No se pudo encontrar el Usuario"
-    )
-
-@app.delete("/users/{id}")
-def borrar_usuario(id: int):
-    for usuario in usuarios:
-        if usuario["id"] == id:
-            usuarios.remove(usuario)
-            return {"mensaje": "Se borro el usuario correctamente."}
-
-    raise HTTPException(
-        status_code=status.HTTP_404_NOT_FOUND,
-        detail="No se pudo encontrar el Usuario"
-    )

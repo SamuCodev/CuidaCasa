@@ -6,6 +6,7 @@ import {
     IconLogout,
     IconHelp,
 } from "@tabler/icons-react";
+import { Link } from "react-router-dom";
 
 import "./Perfil.css";
 
@@ -50,10 +51,10 @@ export const Perfil = () => {
                         Ayuda y soporte
                     </a>
                 </div>
-                <button className="btn-logout">
+                <Link to={"/login"} className="btn-logout">
                     Cerrar Sesion
                     <IconLogout size={22} stroke={2} />
-                </button>
+                </Link>
             </div>
         </section>
     );

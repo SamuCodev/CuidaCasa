@@ -17,26 +17,33 @@
     margin-bottom: var(--espacio-md);
 }
 
-.activas-historial__filtro a {
-    flex: 1 1 0;
-    background-color: var(--color-primario);
-    color: hsl(0, 0%, 100%);
-    text-decoration: none;
-    padding: 0.55rem 0.75rem;
-    border-radius: var(--radio-sm);
-    text-align: center;
-    justify-content: center;
+.activas-historial__filtro button {
+    flex: 1 1;
+    display: flex;
+    align-items: center;
+    min-height: 48px;
+    padding: 0.35rem 0.65rem;
+    background-color: var(--color-superficie);
+    border: 1px solid var(--color-borde);
+    border-radius: 999px;
+    box-shadow: var(--sombra-suave);
     transition: var(--transition);
-    font-weight: 600;
-    font-size: var(--texto-md);
+    text-decoration: none;
+    justify-content: center;
+    color: var(--color-primario);
+    gap: var(--espacio-sm);
+    transition: var(--transition);
+    cursor: pointer;
 }
 
-.activas-historial__filtro a:hover {
+.activas-historial__filtro button:hover {
     background-color: var(--color-primario-oscuro);
+    color: white;
 }
 
 .activas-historial__filtro .selected {
-    background-color: var(--color-primario-oscuro);
+    background-color: var(--color-primario);
+    color: white;
 }
 
 .solicitudes-container__activas,
@@ -44,13 +51,9 @@
     margin-top: var(--espacio-md);
 }
 
-.oculto {
-    display: none;
-}
-
-@media (min-width: 1024px) {
-    .Solicitudes-activas__section .solicitudes-container__activas,
-    .solicitudes-container__completadas {
+@media (min-width: 728px) {
+    .Solicitudes-activas__section > .solicitudes-container__activas,
+    .Solicitudes-activas__section > .solicitudes-container__completadas {
         display: grid;
         grid-template-columns: repeat(3, 1fr);
         gap: var(--espacio-sm);

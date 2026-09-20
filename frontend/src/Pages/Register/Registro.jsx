@@ -2,8 +2,44 @@ import { IconBriefcase2, IconHome, IconUser } from "@tabler/icons-react";
 import "../../styles/auth.css";
 import "./Registro.css";
 import { Link } from "react-router-dom";
+import { useState } from "react";
 
 export const Registro = () => {
+    const [formData, setFormData] = useState({
+        nombre: "",
+        apellido: "",
+        correo: "",
+        contraseña: "",
+        tipoUsuario: "cliente",
+    });
+
+    const handleChange = (event) => {
+        const { name, value } = event.target;
+        setFormData({ ...formData, [name]: value });
+    };
+
+    const handleSubmit = async (event) => {
+        event.preventDefault();
+        const respuesta = await fetch("http://127.0.0.1:8000/usuarios", {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify({
+                nombre: formData.nombre,
+                apellido: formData.apellido,
+                correo: formData.correo,
+                password: formData.contraseña,
+                rol: formData.tipoUsuario,
+            }),
+        });
+        if (respuesta.ok) {
+            const datos = await respuesta.json();
+            console.log("¡Usuario creado!", datos);
+        } else {
+            const datosError = await respuesta.json();
+            console.log("Error", datosError);
+        }
+    };
+
     return (
         <section className="auth">
             <main className="auth-card registro-card">
@@ -17,7 +53,7 @@ export const Registro = () => {
                     <p>Encuentra ayuda confiable para cuidar tu hogar.</p>
                 </div>
 
-                <form className="registro-form">
+                <form className="registro-form" onSubmit={handleSubmit}>
                     <div className="registro-form__grid">
                         <label>
                             Nombre
@@ -25,6 +61,8 @@ export const Registro = () => {
                                 type="text"
                                 name="nombre"
                                 placeholder="Tu nombre"
+                                value={formData.nombre}
+                                onChange={handleChange}
                                 required
                             />
                         </label>
@@ -34,6 +72,8 @@ export const Registro = () => {
                                 type="text"
                                 name="apellido"
                                 placeholder="Tu apellido"
+                                value={formData.apellido}
+                                onChange={handleChange}
                                 required
                             />
                         </label>
@@ -45,6 +85,8 @@ export const Registro = () => {
                             type="email"
                             name="correo"
                             placeholder="nombre@correo.com"
+                            value={formData.correo}
+                            onChange={handleChange}
                             required
                         />
                     </label>
@@ -52,9 +94,11 @@ export const Registro = () => {
                         Contraseña
                         <input
                             type="password"
-                            name="contrasena"
+                            name="contraseña"
                             placeholder="Mínimo 8 caracteres"
                             minLength="8"
+                            value={formData.contraseña}
+                            onChange={handleChange}
                             required
                         />
                     </label>
@@ -67,6 +111,7 @@ export const Registro = () => {
                                     type="radio"
                                     name="tipoUsuario"
                                     value="cliente"
+                                    onChange={handleChange}
                                     defaultChecked
                                 />
                                 <IconUser size={19} stroke={2} />
@@ -79,6 +124,7 @@ export const Registro = () => {
                                     type="radio"
                                     name="tipoUsuario"
                                     value="proveedor"
+                                    onChange={handleChange}
                                 />
                                 <IconBriefcase2 size={19} stroke={2} />
                                 <span>
