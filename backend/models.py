@@ -2,6 +2,7 @@ from sqlalchemy import Column, Integer, String, Boolean, DateTime
 from database import Base
 from sqlalchemy.sql import func
 
+# Esta es la estructura de la tabla de usuarios con sus respectivas columnas, tipo de datos y argumentos
 class Usuario(Base):
     __tablename__ = "usuarios"
     id = Column(Integer, primary_key=True)

@@ -7,8 +7,6 @@ import { Login } from "../src/Pages/Login/Login";
 import { Registro } from "./Pages/Register/Registro";
 import { Perfil } from "./Pages/Perfil/Perfil";
 
-import "./App.css";
-
 export const App = () => {
     return (
         <Routes>
