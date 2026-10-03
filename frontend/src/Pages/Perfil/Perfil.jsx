@@ -6,17 +6,29 @@ import {
     IconLogout,
     IconHelp,
 } from "@tabler/icons-react";
-import { Link } from "react-router-dom";
-
+import { useNavigate } from "react-router-dom";
+import { useAuth } from "../../context/AuthContext";
 import "./Perfil.css";
 
 export const Perfil = () => {
+    const navigate = useNavigate();
+    const { user } = useAuth();
+    const { logout } = useAuth();
+
+    const handleLogout = () => {
+        logout();
+        navigate("/login");
+    };
+
     return (
         <section className="perfil">
             <div className="user-info">
                 <span className="avatar">SD</span>
-                <h2>Samuel David</h2>
-                <p>samuel@gmail.com</p>
+                <h2>
+                    {user.nombre} {user.apellido}
+                </h2>
+                <p>{user.correo}</p>
+                <p>{user.rol}</p>
                 <button>
                     <IconEdit size={18} stroke={1.8} />
                     Editar perfil
@@ -51,10 +63,10 @@ export const Perfil = () => {
                         Ayuda y soporte
                     </a>
                 </div>
-                <Link to={"/login"} className="btn-logout">
-                    Cerrar Sesion
+                <button className="btn-logout" onClick={handleLogout}>
+                    <p>Cerrar Sesion</p>
                     <IconLogout size={22} stroke={2} />
-                </Link>
+                </button>
             </div>
         </section>
     );

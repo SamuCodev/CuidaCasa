@@ -3,7 +3,7 @@ from fastapi.middleware.cors import CORSMiddleware
 from sqlalchemy.orm import Session
 from models import Usuario
 from database import get_db
-from schemas import UsuarioCreate, UsuarioResponse, UsuarioLogin, UsuarioToken
+from schemas import UsuarioCreate, UsuarioResponse, UsuarioLogin, UsuarioToken, TokenResponse
 from security import hashear_pwd, verificar_password, crear_token
 from sqlalchemy.exc import IntegrityError
 import jwt
@@ -17,7 +17,7 @@ app = FastAPI() # Se inicializa la App y todos los endpoints van pegados a este 
 
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["http://localhost:5173"], #Con este link se puede acceder de manera segura al servidor de desarrollo sin problema, pero si fuera en produccion seria en el dominio real
+    allow_origins=["http://localhost:5173", "http://localhost:4173"], #Con este link se puede acceder de manera segura al servidor de desarrollo sin problema, pero si fuera en produccion seria en el dominio real
     allow_credentials=True, # Permite enviar cookies y tokens de autenticacion
     allow_methods=["*"], # Permite metodos HTTP como GET, POST, PUT, etc.
     allow_headers=["*"] # Permite cualquier tipo de de header como Content-type, Authorization, etc.
@@ -57,7 +57,7 @@ def registrar_usuario(usuario: UsuarioCreate, db: Session = Depends(get_db)):
     return nuevo_usuario
 
 
-@app.post("/auth/login", response_model=UsuarioToken)
+@app.post("/auth/login", response_model=TokenResponse)
 def login_usuarios(datos: UsuarioLogin, db: Session = Depends(get_db)):
     resultado_query = db.query(Usuario).filter(Usuario.correo == datos.correo).first()
     if resultado_query is None:
@@ -71,5 +71,10 @@ def login_usuarios(datos: UsuarioLogin, db: Session = Depends(get_db)):
     token = crear_token(payload)
     return {
         "access_token": token,
-        "token_type": "bearer"
+        "token_type": "bearer",
+        "nombre": resultado_query.nombre,
+        "apellido": resultado_query.apellido,
+        "correo": resultado_query.correo,
+        "rol": resultado_query.rol
+        
     }
